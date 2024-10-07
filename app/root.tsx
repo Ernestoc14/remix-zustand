@@ -1,4 +1,5 @@
 import { json, redirect } from "@remix-run/node";
+import { useEffect } from "react";
 import {
   Form,
   Links,
@@ -34,6 +35,19 @@ export default function App() {
   const { contacts, q } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
 
+  useEffect(() => {
+    const searchField = document.getElementById("q");
+    if (searchField instanceof HTMLInputElement) {
+      searchField.value = q || "";
+    }
+  }, [q]);
+
+
+  // Submitting Forms onChange
+  
+  // Submitting Forms onChange
+  
+  // Submitting Forms onChange
   return (
     <html lang="en">
       <head>
